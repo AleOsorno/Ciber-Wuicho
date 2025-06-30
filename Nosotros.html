@@ -102,7 +102,7 @@
 
         <!-- Imagen 1 -->
         <div class="image-full">
-            <img src="Css/Img/Servicios.jpg" alt="Imagen decorativa 1">
+            <img src="Css/Img/Nosotros2.jpg" alt="Imagen decorativa 1">
         </div>
 
         <!-- Sección 2 -->
@@ -117,7 +117,7 @@
 
         <!-- Imagen 2 -->
         <div class="image-full">
-            <img src="Css/Img/Servicios.jpg" alt="Imagen decorativa 2">
+            <img src="Css/Img/Nosotros3.jpg" alt="Imagen decorativa 2">
         </div>
 
         <!-- Sección 3 -->
@@ -131,44 +131,49 @@
         </section>
 
         <section class="personal" id="equipo">
-            <h1 class="tituloPersonal">Equipo</h1>
-            <div class="wrapper">
-                <i id="left" class="fa-solid fa-angle-left"></i>
-                <ul class="carousel">
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/lider.png" alt="" draggable="false"></div>
-                        <h2>Dueño</h2>
-                        <span>Luis Felipe Domínguez</span>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/Mujer.png" alt="" draggable="false"></div>
-                        <h2>Equipo 1</h2>
-                        <span>Colar Jazmín Domínguez García (179761)</span>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/Mujer.png" alt="" draggable="false"></div>
-                        <h2>Equipo 1</h2>
-                        <span>Idania Monserrat Vázquez Hernández (179490)</span>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
-                        <h2>Equipo 1</h2>
-                        <span>Octavio Vázquez Solorio (183955)</span>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
-                        <h2>Equipo 1</h2>
-                        <span>Alejandro Osorno Beltrán (185085)</span>
-                    </li>
-                    <li class="card">
-                        <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
-                        <h2>Equipo 1</h2>
-                        <span>Moises Medina Avila (184149)</span>
-                    </li>
-                </ul>
-                <i id="right" class="fa-solid fa-angle-right"></i>
-            </div>
-        </section>
+  <h1 class="tituloPersonal">Equipo</h1>
+  <div class="wrapper">
+    <i id="left" class="fa-solid fa-angle-left"></i>
+
+    <div class="carousel-container">
+      <ul class="carousel">
+        <li class="card">
+          <div class="img"><img src="Css/Img/lider.png" alt="" draggable="false"></div>
+          <h2>Dueño</h2>
+          <span>Luis Felipe Domínguez</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="Css/Img/Mujer.png" alt="" draggable="false"></div>
+          <h2>Equipo 1</h2>
+          <span>Colar Jazmín Domínguez García (179761)</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="Css/Img/Mujer.png" alt="" draggable="false"></div>
+          <h2>Equipo 1</h2>
+          <span>Idania Monserrat Vázquez Hernández (179490)</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
+          <h2>Equipo 1</h2>
+          <span>Octavio Vázquez Solorio (183955)</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
+          <h2>Equipo 1</h2>
+          <span>Alejandro Osorno Beltrán (185085)</span>
+        </li>
+        <li class="card">
+          <div class="img"><img src="Css/Img/Hombre.png" alt="" draggable="false"></div>
+          <h2>Equipo 1</h2>
+          <span>Moises Medina Avila (184149)</span>
+        </li>
+      </ul>
+      <div class="scroll-indicator"></div>
+    </div>
+
+    <i id="right" class="fa-solid fa-angle-right"></i>
+  </div>
+</section>
     </article>
 
     <script src="JS/Menu.js"></script>
@@ -220,20 +225,22 @@
         }
         autoPlay();
 
-        const infiniteScroll = () =>{
-        if(carousel.scrollLeft ===0){
-            carousel.classList.add("no-transition");
-            carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
-            carousel.classList.remove("no-transition");
-        }else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth -carousel.offsetWidth){
-            carousel.classList.add("no-transition");
-            carousel.scrollLeft = carousel.offsetWidth;
-            carousel.classList.remove("no-transition");
-        }
+        const infiniteScroll = () => {
+  if (carousel.scrollLeft === 0) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.scrollWidth - (2 * carousel.offsetWidth);
+    carousel.classList.remove("no-transition");
+    updateScrollIndicator(); // 👈 actualizar barra
+  } else if (Math.ceil(carousel.scrollLeft) >= carousel.scrollWidth - carousel.offsetWidth) {
+    carousel.classList.add("no-transition");
+    carousel.scrollLeft = carousel.offsetWidth;
+    carousel.classList.remove("no-transition");
+    updateScrollIndicator(); // 👈 actualizar barra
+  }
 
-        clearTimeout(timeoutId);
-        if(!wrapper.matches(":hover")) autoPlay();
-        }
+  clearTimeout(timeoutId);
+  if (!wrapper.matches(":hover")) autoPlay();
+};
 
         carousel.addEventListener("mousedown", dragStart);
         carousel.addEventListener("mousemove", dragging);
@@ -241,6 +248,22 @@
         carousel.addEventListener("scroll", infiniteScroll);
         wrapper.addEventListener("mousenter", () => clearTimeout(timeoutId));
         wrapper.addEventListener("mouseleave", autoPlay);
+
+        const scrollIndicator = document.querySelector(".scroll-indicator");
+
+  function updateScrollIndicator() {
+    if (!scrollIndicator) return;
+    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    const scrollLeft = carousel.scrollLeft;
+    const scrollPercent = scrollLeft / maxScroll;
+    const indicatorMaxLeft = carousel.clientWidth - scrollIndicator.clientWidth;
+    scrollIndicator.style.left = `${scrollPercent * indicatorMaxLeft}px`;
+  }
+
+  carousel.addEventListener("scroll", updateScrollIndicator);
+  window.addEventListener("resize", updateScrollIndicator);
+  window.addEventListener("load", updateScrollIndicator); // para posicionarla desde el inicio
+
     </script>
 </body>
 </html>
