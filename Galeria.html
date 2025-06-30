@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="Css/MenuBarra.css">
+    <link rel="stylesheet" href="Css/Galeria.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <header>
+            <div class="contenido_menu">
+                <div class="menu">
+                    <div class="menu-hamburguesa" id="btn-menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <a id="inicio" href="index.html">
+                                    <img class="inicios desktop-only" src="Css/Img/Ciber wuicho.png">
+                                     <span class="mobile-only">Inicio</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="posicion" href="#">
+                                    <ion-icon name="book-outline"></ion-icon>
+                                    <span>Servicios</span>
+                                </a>
+                                <ul>
+                                    <li><a href="Servicios.html#computadoras">Computadoras y uso por hora</a></li>
+                                    <li><a href="Servicios.html#impresiones y escaneos">Impresiones y escaneos</a></li>
+                                    <li><a href="Servicios.html#papeleria">Venta de productos escolares</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="posicion" href="HorarioUbicacion.html">
+                                    <ion-icon name="location-outline"></ion-icon>
+                                    <span>Horarios y Ubicación</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="posicion" href="#">
+                                    <ion-icon name="stop-circle-outline"></ion-icon>
+                                    <span>Galería</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="posicion" href="#">
+                                    <ion-icon name="person-outline"></ion-icon>
+                                    <span>Nosotros</span>
+                                </a>
+                                <ul>
+                                    <li><a href="Nosotros.html#historia">Historia</a></li>
+                                    <li><a href="Nosotros.html#MisionVision">Misión y visión</a></li>
+                                    <li><a href="Nosotros.html#equipo">Equipo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="posicion" href="#">
+                                    <ion-icon name="mail-unread-outline"></ion-icon>
+                                    <span>Contacto</span>
+                                </a>
+                                <ul>
+                                    <li><a href=" https://wa.me/52444-318-1095"><ion-icon name="logo-whatsapp"></ion-icon> WhatsApp</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+    </header>
+
+    <article>
+        <div class="apartado">
+
+        </div>
+
+        <section class="servicios-banner" id="hora">
+            <div class="banner-texto">
+                <h1>Galeria</h1>
+                <p>
+                Explora en imágenes cómo es Ciber Wuicho por dentro y por fuera. Conoce nuestro espacio, equipo y todo lo que tenemos para ofrecerte.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="gallery-container">
+                <div class="gallery-images">
+                    <div class="gallery-image">
+                        <img src="Css/Img/Galeria1.jpg" alt="Conferencia de Egresados">
+                        <div class="caption">
+                            <h4>Entrada del ciber</h4>
+                            <p>Tu ciber de confianza, justo aquí. ¡Pasa y conócenos!</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image">
+                        <img src="Css/Img/Galeria2.jpg" alt="ITI Experience">
+                        <div class="caption">
+                            <h4>Computadoras e Impresoras</h4>
+                            <p>Computadoras e impresoras siempre disponibles para lo que necesites.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image">
+                        <img src="Css/Img/Galeria3.jpg" alt="ITI Experience">
+                        <div class="caption">
+                            <h4>Papeleria</h4>
+                            <p>¿Te faltó algo? Aquí encuentras todo lo que necesitas para la escuela o la oficina.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-image">
+                        <img src="Css/Img/Galeria4.jpg" alt="ITI Experience">
+                        <div class="caption">
+                            <h4>Dueño del Ciber</h4>
+                            <p>Presentamos a Luis Felipe, propietario de Ciber Wuicho, comprometido con brindarte atención personalizada y calidad.</p>
+                        </div>
+                    </div>
+                    <!-- Agrega más imágenes igual que arriba -->
+                </div>
+
+                <div class="gallery-controls">
+                    <label class="prev" onclick="prevImage()">&#10094;</label>
+                    <label class="next" onclick="nextImage()">&#10095;</label>
+                </div>
+            </div>
+        </section>
+    </article>
+    
+    <script src="JS/Menu.js"></script>
+    <script>
+        let currentIndex = 1;
+        const totalImages = document.querySelectorAll('.gallery-image').length;
+
+        function showImage(index) {
+        const images = document.querySelectorAll('.gallery-image');
+        images.forEach((img, i) => {
+            img.style.display = i === index - 1 ? 'block' : 'none';
+        });
+        }
+
+        function nextImage() {
+        currentIndex = (currentIndex % totalImages) + 1;
+        showImage(currentIndex);
+        }
+
+        function prevImage() {
+        currentIndex = (currentIndex - 2 + totalImages) % totalImages + 1;
+        showImage(currentIndex);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+        showImage(currentIndex);
+        });
+    </script>
+</body>
+</html>

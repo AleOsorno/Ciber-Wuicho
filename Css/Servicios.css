@@ -1,0 +1,380 @@
+* {
+  box-sizing: border-box;
+}
+
+.apartado{
+    height: 90px;
+}
+
+.servicios-banner {
+  background-image: url("Img/Servicios.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 0 5%;
+  position: relative;
+  text-align: left;
+}
+
+.servicios-banner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* oscurece para que el texto sea legible */
+  z-index: 1;
+}
+
+.banner-texto {
+  z-index: 2;
+  max-width: 700px;
+}
+
+/* Estilos base */
+.banner-texto h1 {
+  font-size: 440%;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.banner-texto p {
+  font-size: 140%;
+  line-height: 1.8;
+  text-shadow: 1px 1px 3px #000;
+}
+
+/*Computadoras*/
+
+.servicios-galeria {
+  padding: 40px 5%;
+  background-color: #ffffff;
+}
+
+.titulo-servicio {
+  font-size: 5vh;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #333;
+}
+
+/* el grid solo se aplica al contenedor de tarjetas */
+.galeria-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tarjeta h3 {
+  font-size: 28px;
+  margin: 15px 10px 10px;
+  color: #333;
+}
+
+.tarjeta p {
+  font-size: 20px;
+  color: #555;
+  margin: 0 15px 20px;
+  line-height: 1.4;
+}
+
+/*Impresiones*/
+
+.carousel-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #315166;
+}
+
+.subtitulo{
+    margin: 30px 0px;
+    color: white;
+    font-size: 5vh;
+}
+
+.carousel-card {
+  display: none;
+  width: 95vw;
+  max-width: 1400px;
+  margin-bottom: 10px;
+}
+
+.carousel-card.active {
+  display: block;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  min-height: 350px;
+}
+
+.card-text {
+  width: 50%;
+  text-align: center;
+}
+
+.card-text h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.card-text p {
+  font-size: 22px;
+}
+
+.card-img {
+  width: 50%;
+  text-align: right;
+}
+
+.card-img img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 10PX;
+}
+
+.carousel-controls {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.carousel-btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 20px;
+}
+
+.carousel-btn:hover {
+  background-color: #222;
+}
+
+/*Escaneos*/
+
+.escaneo{
+    text-align: center;
+    font-size: 5vh;
+    margin: 20px 0px;
+}
+
+.info-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 5%;
+  gap: 30px;
+}
+
+.info-block {
+  flex: 1 1 20%;
+  min-width: 250px;
+  max-width: 400px;
+  text-align: center;
+  padding: 20px;
+}
+
+.info-block ion-icon {
+  font-size: 60px;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.info-block h3 {
+  font-size: 36px;
+  margin: 10px 0;
+  color: #222;
+}
+
+.info-block p {
+  font-size: 22px;
+  color: #555;
+}
+
+/*Papeleria*/
+
+    .papeleria {
+        border: #1f6391 solid;
+      width: 100%;
+      background: rgb(92, 92, 92);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      padding: 30px;
+    }
+
+    h2.section-title {
+      text-align: center;
+      font-size: 5vh;
+      margin-bottom: 30px;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .accordion {
+      background-color: #4ba5e0;
+      color: white;
+      cursor: pointer;
+      padding: 18px 25px;
+      width: 100%;
+      border: none;
+      outline: none;
+      text-align: left;
+      font-size: 1.25rem;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .accordion:hover {
+      background-color: #1f6391;
+    }
+
+    .accordion.active {
+      background-color: #334953;
+    }
+
+    /* Ícono + / - */
+    .accordion::after {
+      content: "+";
+      font-size: 1.5rem;
+      line-height: 1;
+      color: white;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active::after {
+      content: "−";
+      transform: rotate(180deg);
+    }
+
+    .panel {
+      max-height: 0;
+      overflow: hidden;
+      background-color: #ecf0f1;
+      font-size: 1.5rem;
+      color: #34495e;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 20px;
+      padding: 0 25px;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .panel.open {
+      padding: 15px 25px;
+      max-height: 500px; /* Ajusta si el contenido es más grande */
+    }
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .apartado{
+      display: none;
+    }
+
+    .servicios-banner {
+      height: 300px;
+      padding: 0 4%;
+    }
+
+    .banner-texto h1 {
+      font-size: 30px;
+    }
+
+    .banner-texto p {
+      font-size: 16px;
+    }
+
+    .card-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .card-text, .card-img {
+      width: 100%;
+      padding: 10px 0;
+    }
+
+    .card-img img {
+      max-height: 200px;
+      border-radius: 10px;
+    }
+
+    .card-text h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .card-text p {
+      font-size: 18px;
+    }
+
+    .info-block h3 {
+      font-size: 26px;
+      margin: 10px 0;
+      color: #222;
+    }
+
+    .info-block p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .panel {
+      font-size: 1rem;
+    }
+  }
+
+/* Teléfono */
+@media screen and (max-width: 480px) {
+  .servicios-banner {
+    height: 250px;
+    padding: 0 3%;
+  }
+
+  .banner-texto h1 {
+    font-size: 24px;
+  }
+
+  .banner-texto p {
+    font-size: 14px;
+  }
+}
