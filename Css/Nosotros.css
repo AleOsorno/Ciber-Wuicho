@@ -3,7 +3,7 @@
 }
 
 .servicios-banner {
-  background-image: url("Img/Servicios.jpg");
+  background-image: url("Img/Nosotros.jpg");
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -300,4 +300,21 @@
     .wrapper i {
         display: none; /* Ocultar flechas en móviles para mejor UX */
     }
+
+    .carousel-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 4px; /* separamos del borde */
+    left: 0;
+    height: 6px;
+    width: 40%; /* puedes cambiar a 30%-50% si quieres más corta/larga */
+    background-color: #ffc107; /* color amarillo visible de prueba */
+    border-radius: 3px;
+    z-index: 5;
+    transition: left 0.2s ease;
+  }
 }
