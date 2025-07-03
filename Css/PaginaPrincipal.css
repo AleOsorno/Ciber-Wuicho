@@ -98,7 +98,7 @@ section.s1 {
 }
 
 .separador{
-    height: 50%;
+    height: 40%;
     display: flex;
     background-color: rgb(44, 191, 228);
 }
@@ -145,7 +145,7 @@ section.s1 {
 }
 
 .separador2 {
-    height: 50%;
+    height: 40%;
     display: flex;
     background-color: rgb(187, 187, 187);
 }
