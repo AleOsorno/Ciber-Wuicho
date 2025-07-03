@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap'); /*tipografia SPACE MONO*/
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');/*Lilita one*/
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');/*Patua One*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');/*roboto mono*/
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');/*concert one*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');/*Playfair Display*/
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');/*Lora*/
+
+:root{/*creación de variables para distintos colores de la página*/
+    --color-menu-hover: rgb(238,238,238);
+    --color-menu-hover-texto: rgb(0,0,0);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 769px){
+
+    header{
+        position: fixed;
+        background-color: rgb(0, 0, 0);
+        text-align: center;
+        width: 100%;
+        height: 90px;
+        z-index: 40;
+    }
+
+    img.inicios{
+        width: 60px;
+        border-radius: 30px;
+    }
+    
+    nav a{
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+        margin-top: 20px;
+        border-radius: 30px;
+    }
+
+    nav a.posicion{
+        margin: 20px 14.72px;/*posicion del nav*/
+    }
+
+    nav a.posicion span{
+        padding-left: 10px;
+        font-size: 16px;
+    }
+    
+    nav a:hover{
+        background-color: white;
+        color: black;
+    }
+    
+    .contenido_menu{
+        display: flex; /* <--- Añadido */
+        justify-content: center; /* Centra el contenedor del menú */
+        font-family: sans-serif;
+        position: fixed;
+        top: 0;
+        padding-bottom: 30px;
+        height: 90px;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .menu{
+        width: 100%; /* <--- Antes era max-width: 1200px */
+        height: 100%;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: center; /* Centra los items del nav */
+    }
+    
+    nav{
+        height: 100%;
+    }
+    
+    nav > ul{ /*EL SIGNO DE MAYOR QUE ES COMO DECIR QUE LA PROPIEDAD SE APLIQUE DAL UL DESPUES DEL NAV*/
+        height: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Distribuye uniformemente */
+    align-items: center;
+    width: 100%; /* <--- Asegura que use todo el ancho */
+    }
+    
+    nav  ul  li{
+        height: 100%;
+        list-style: none;
+        position: relative;
+    }
+    
+    nav > ul > li > a{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        color: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center; /* <--- Esto centra el contenido */
+        padding: 14px 20px; /* <--- Reduce el padding lateral */
+        text-transform: uppercase;
+        font-size: 14px;
+        transition: all 300ms ease;
+    }
+    
+    nav > ul > li > a:hover{/*EVENTO DE NOMBRE HOVER QUE SE REFIERE A CUANDO SE INTERACTUA CON EL ELEMENTO CORRESPONDIENTE*/
+        transform: scale(1.1); /*TRANSFORMARSE EN UNA ESCALA DE 1.1*/
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);/*SOMBRA DE FONDO CUANDO INTERACTUAMOS CON EL ELEMENTO*/
+    }
+    
+    nav ul li ul{
+        width: 200px;
+        display: flex;
+        flex-direction: column;/*QUE EL SUBMENU VAYA EN COLUMNA*/
+        background-color: rgb(0, 8, 77);
+        position: absolute; /*posicion absoluta*/
+        top: 90px;
+        left: -4px;
+        padding: 14px 0px 0px 0px;
+        visibility: hidden; /*OCULTO*/
+        opacity: 0;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+        z-index: 10;
+        transition: all 300ms
+    }
+    
+    nav ul li:hover ul{
+        visibility: visible;
+        opacity: 1;
+        top: 70px;
+    }
+    
+    nav ul li ul:before{
+        content: white;
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 12px solid white;
+        position: absolute;
+        top: -12px;
+        left: 20px;   
+    }
+    
+    nav ul li ul li a{
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Centra el contenido horizontalmente */
+        color: rgb(255, 255, 255);
+        padding: 10px 14px;
+        margin-top: 10px;
+        font-size: 14px;
+        text-transform: uppercase;
+        transition: all 300ms;
+    }
+    
+    nav ul li ul li a:hover{
+        background-color: rgb(0, 162, 255);
+        color: rgb(255, 255, 255);
+        transform: scale(1.05); /* Menos agresivo que 1.1 */
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    }
+
+    /*texto*/
+    
+    #inicio{
+        color: var(--color-menu-hover-texto);
+    }
+
+    .mobile-only {
+    display: none;
+    }
+
+    .desktop-only {
+    display: inline-block;
+    }
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    transition: height 0.3s ease;
+  }
+
+  .contenido_menu {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+    position: relative;
+    background-color: black;
+    height: auto !important;
+    transition: all 0.3s ease;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: inline;
+    color: white; /* o el color que quieras */
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  /* Menú principal */
+  nav > ul {
+    flex-direction: column;
+    width: 100%;
+    background-color: black;
+    padding: 0;
+    margin-top: 10px;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    z-index: 999;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  nav > ul.activo {
+    max-height: 1000px; /* suficientemente grande para mostrarlo */
+  }
+
+  nav > ul > li {
+    width: 100%;
+  }
+
+  nav > ul > li > a {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 14px 20px;
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+  }
+
+  nav > ul > li > a:hover {
+    background-color: #222;
+  }
+
+  /* Submenús ocultos */
+  nav ul li ul {
+    position: static;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #3f728f;
+    transition: max-height 0.4s ease;
+    flex-direction: column;
+  }
+
+  nav ul li ul.activo {
+    max-height: 500px;
+  }
+
+  nav ul li ul li a {
+    padding: 10px 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li ul li a:hover {
+    background-color: rgb(0, 133, 241);
+    color: rgb(255, 255, 255);
+  }
+
+  /* Menú hamburguesa con animación */
+  .menu-hamburguesa {
+    background-color: black;
+    border-radius: 25px;
+    padding: 1px;
+    display: block;
+    cursor: pointer;
+    width: 40px;
+    height: 35px;
+    z-index: 2000;
+    position: absolute;
+    top: 25px;
+    right: 20px;
+  }
+
+  .menu-hamburguesa div {
+    background-color: rgb(255, 255, 255);
+    height: 4px;
+    margin: 5px;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  /* Animación cuando está activo (opcional, requiere clase JS) */
+  .menu-hamburguesa.activo div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-hamburguesa.activo div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-hamburguesa.activo div:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -8px);
+  }
+
+  /* Logo */
+  img.inicios {
+    width: 50px;
+    border-radius: 30px;
+    transition: transform 0.3s;
+  }
+
+  /* Logo con efecto al hacer hover (opcional) */
+  img.inicios:hover {
+    transform: scale(1.1);
+  }
+
+  #inicio {
+    background-color: black;
+    color: var(--color-menu-hover-texto);
+  }
+}
