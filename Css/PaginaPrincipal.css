@@ -97,12 +97,6 @@ section.s1 {
 .set2{
     width: 100%;
     height: auto;
-    border: 10px solid red;
-}
-
-.set3{
-    width: 100%;
-    height: 90%;
 }
 
 .separador{
