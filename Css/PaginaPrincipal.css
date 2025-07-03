@@ -6,7 +6,7 @@
 
 .centrado {
     width: 100%;
-    max-height: 50vh; /* Hasta 90% del alto visible */
+    max-height: 90vh; /* Hasta 90% del alto visible */
     display: flex;
     flex-direction: column;
     justify-content: center;    
