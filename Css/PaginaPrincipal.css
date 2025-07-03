@@ -2,6 +2,8 @@
     height: 90px;
 }
 
+
+
 /*CARRUSEL*/
 
 .centrado {
@@ -94,23 +96,19 @@ section.s1 {
 
 .set2{
     width: 100%;
-    height: 100%;
+    height: auto;
+    border: 10px solid red;
+}
+
+.set3{
+    width: 100%;
+    height: 90%;
 }
 
 .separador{
     height: 40%;
     display: flex;
     background-color: rgb(44, 191, 228);
-}
-
-.set .set2 .separador .imag{
-    width: 50%;
-    height: 100%;
-}
-
-.set .set2 .separador .imag img{
-    width: 100%;
-    height: 100%;
 }
 
 .set .set2 .separador .texto{
@@ -142,6 +140,7 @@ section.s1 {
     border-radius: 15px;
     border: 2px solid rgb(255, 153, 0);
     margin: 0px 260px;
+    margin-bottom: 50px;
 }
 
 .separador2 {
