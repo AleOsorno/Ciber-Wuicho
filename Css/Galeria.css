@@ -45,7 +45,6 @@
 /*Galeria*/
 
 .gallery-container {
-    background-color: blueyyy;
   position: relative;
   background-color: rgb(255, 255, 255);
   padding: 20px;
@@ -54,7 +53,7 @@
 
 .gallery-images {
   position: relative;
-  height: 400px;
+  height: 60vh;
   overflow: hidden;
 }
 
